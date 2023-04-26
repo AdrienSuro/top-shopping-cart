@@ -1,24 +1,28 @@
 import React from "react";
 
-function Cart() {
+function Cart(props) {
   return (
     <div>
       <h1>Shopping Cart</h1>
       <div>
         <table>
+          {props.cartItems.map((book) => (
+            <tr>
+              <td>{book.title}</td>
+              <td>
+                {book.quantity}x{book.price}€
+              </td>
+            </tr>
+          ))}
+        </table>
+        <table>
           <tr>
-            <td>La loi</td>
-            <td>15,90€</td>
-          </tr>
-          <tr>
-            <td>Sophismes économiques</td>
-            <td>7,90€</td>
-          </tr>
-          <tr>
-            <td>Subtotal</td>
-            <td>23,80€</td>
+            <td>Total</td>
+            <td>{props.cartTotalPrice}€</td>
           </tr>
         </table>
+      </div>
+      <div>
         <button>CHECKOUT</button>
       </div>
     </div>

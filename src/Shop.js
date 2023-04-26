@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cart from "./Cart";
 import Item from "./Item";
 import "./style.css";
@@ -36,7 +36,12 @@ const Shop = () => {
     },
   ];
 
-  const [cartItems, setCartItems] = useState("0");
+  const [cartItems, setCartItems] = useState([]);
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
+
+  useEffect(() => {
+    setCartTotalPrice(cartItems.reduce((a, b) => a + b.price * b.quantity, 0));
+  }, [cartItems]);
 
   return (
     <div className="shopComponent">
@@ -48,12 +53,14 @@ const Shop = () => {
               description={book.description}
               price={book.price}
               picture={book.picture}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           </div>
         ))}
       </div>
       <div className="cartColumn">
-        <Cart />
+        <Cart cartItems={cartItems} cartTotalPrice={cartTotalPrice} />
       </div>
     </div>
   );

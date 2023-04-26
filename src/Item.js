@@ -13,7 +13,11 @@ function Item(props) {
       <input value={numberOfItems} className="numberOfItems"></input>
       <button
         className="minusItem"
-        onClick={() => setNumberOfItems(numberOfItems - 1)}
+        onClick={() => {
+          if (numberOfItems === 1) {
+            return;
+          } else setNumberOfItems(numberOfItems - 1);
+        }}
       >
         -
       </button>
@@ -23,7 +27,26 @@ function Item(props) {
       >
         +
       </button>
-      <button className="addToCart">Add to cart</button>
+      <button
+        className="addToCart"
+        onClick={() => {
+          const currentItems = [...props.cartItems];
+          let isIndex = currentItems.findIndex((a) => a.title === props.title);
+          console.log(isIndex);
+          if (isIndex != -1) {
+            currentItems[isIndex].quantity += numberOfItems;
+          } else {
+            currentItems.push({
+              title: props.title,
+              quantity: numberOfItems,
+              price: props.price,
+            });
+          }
+          props.setCartItems(currentItems);
+        }}
+      >
+        Add to cart
+      </button>
     </div>
   );
 }
