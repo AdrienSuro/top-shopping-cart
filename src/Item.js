@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
 function Item(props) {
+  const [numberOfItems, setNumberOfItems] = useState(1);
+
   return (
     <div class="book">
-      <img className="bookImg" src={require("./img/thelaw.jpeg")}></img>
+      <img className="bookImg" src={props.picture}></img>
       <h2 className="bookTitle">{props.title}</h2>
       <p className="bookPrice">{props.price}€</p>
       <p className="bookDescription">{props.description}</p>
-      <input placeholder="1" className="numberOfItems"></input>
-      <button className="minusItem">-</button>
-      <button className="plusItem">+</button>
+      <input value={numberOfItems} className="numberOfItems"></input>
+      <button
+        className="minusItem"
+        onClick={() => setNumberOfItems(numberOfItems - 1)}
+      >
+        -
+      </button>
+      <button
+        className="plusItem"
+        onClick={() => setNumberOfItems(numberOfItems + 1)}
+      >
+        +
+      </button>
       <button className="addToCart">Add to cart</button>
     </div>
   );
