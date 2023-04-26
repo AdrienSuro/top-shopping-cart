@@ -17,7 +17,7 @@ function Item() {
         considered a classic of economic and political thought, and its ideas
         continue to be influential to this day.
       </p>
-      <input className="numberOfItems"></input>
+      <input placeholder="1" className="numberOfItems"></input>
       <button className="minusItem">-</button>
       <button className="plusItem">+</button>
       <button className="addToCart">Add to cart</button>

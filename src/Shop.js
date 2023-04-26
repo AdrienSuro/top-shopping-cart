@@ -13,6 +13,9 @@ const Shop = () => {
         <div className="itemDiv">
           <Item />
         </div>
+        <div className="itemDiv">
+          <Item />
+        </div>
       </div>
       <div className="cartColumn">
         <Cart />
