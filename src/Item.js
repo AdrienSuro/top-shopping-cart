@@ -1,11 +1,12 @@
 import React from "react";
+import "./style.css";
 
 function Item() {
   return (
-    <div>
-      <img></img>
-      <h2>Test title</h2>
-      <p>
+    <div class="book">
+      <img className="bookImg" src={require("./img/thelaw.jpeg")}></img>
+      <h2 className="bookTitle">Test title</h2>
+      <p className="bookDescription">
         "The Law" is a book written by Frédéric Bastiat in 1850 that advocates
         for the principles of individual liberty, free markets, and limited
         government intervention in the economy. In the book, Bastiat argues that
@@ -16,10 +17,10 @@ function Item() {
         considered a classic of economic and political thought, and its ideas
         continue to be influential to this day.
       </p>
-      <input></input>
-      <button>-</button>
-      <button>+</button>
-      <button>Add to cart</button>
+      <input className="numberOfItems"></input>
+      <button className="minusItem">-</button>
+      <button className="plusItem">+</button>
+      <button className="addToCart">Add to cart</button>
     </div>
   );
 }

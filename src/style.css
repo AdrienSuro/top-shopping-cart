@@ -21,3 +21,72 @@ nav {
 #bastiat_picture {
     width: 30vw;
 }
+
+.shopComponent {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;
+
+}
+
+.itemsColumn {
+    grid-column: 1/2;
+}
+
+.cartColumn {
+    grid-column: 2/3;
+    padding: 20px;
+    flex-grow: 3;
+    background-color: white;;
+    border-left: 2px black solid;
+}
+
+.itemDiv {
+    max-width: 50vw;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 2fr;
+    grid-template-rows: 2fr 6fr 1fr 1fr;
+    gap: 15px;
+}
+
+.bookImg {
+    max-width: 30%;
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+.bookTitle {
+    grid-column: 2/5;
+    grid-row: 1/2;
+}
+
+.bookDescription {
+    grid-column: 2/5;
+    grid-row: 2/3;
+}
+
+.numberOfItems {
+    grid-column: 2/4;
+    grid-row: 3/4;
+}
+
+.minusItem {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.plusItem {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+.addToCart {
+    grid-column: 4/5;
+    grid-row: 3/5;
+}
+
+
