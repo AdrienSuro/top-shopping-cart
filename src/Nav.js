@@ -8,7 +8,7 @@ function Nav() {
     <nav>
       <h1>Bastiat Fanshop</h1>
       <ul class="links">
-        <Link to="/home">
+        <Link to="/">
           <li>Home</li>
         </Link>
         <Link to="/shop">

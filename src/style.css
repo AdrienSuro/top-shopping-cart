@@ -1,5 +1,8 @@
+:root {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 nav {
-    padding: 10px;
     height: 10vh;
     background-color: beige;
     display: flex;
@@ -13,4 +16,8 @@ nav {
     list-style: none;
     justify-content: space-around;
     align-items: center;
+}
+
+#bastiat_picture {
+    width: 30vw;
 }
