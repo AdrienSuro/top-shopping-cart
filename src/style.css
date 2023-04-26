@@ -1,0 +1,16 @@
+nav {
+    padding: 10px;
+    height: 10vh;
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
